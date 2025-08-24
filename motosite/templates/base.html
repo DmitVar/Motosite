@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet"
+		  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap"
+		  rel="stylesheet" />
+	<link rel="stylesheet" href="{% static 'main_page/css/style.css' %}" type="text/css"/>
+	<title>{{title}}</title>
+</head>
+<body>
+	<header>
+		<menu type="context">
+			<div class="logo">
+				<img src="{% static 'main_page/images/logo.png' %}" alt="logo" />
+			</div>
+			<nav>
+				<ul class="main-menu">
+                    <li><a href="{% url 'home' %}">Main Motorcycles</a></li>
+					<li><a href="{% url 'add_bike'%}">Add Bike</a></li>
+				</ul>
+			</nav>
+		</menu>
+	</header>
+	<main>
+        {% block content %}
+        {% endblock %}
+	</main>
+	<footer class="footer">
+		<div class="footer-container">
+			<div class="footer-column">
+				<h3>About the company</h3>
+				<p>
+					Motosite is a community of motorcycle enthusiasts. We provide information, news and services for motorcyclists.
+				</p>
+			</div>
+
+			<div class="footer-column">
+				<h3>Sections</h3>
+				<ul>
+					<li><a href="#">News</a></li>
+					<li><a href="#">Reviews</a></li>
+					<li><a href="#">Motorcycle Brands</a></li>
+					<li><a href="#">Accessories</a></li>
+					<li><a href="#">Events</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-column">
+				<h3>Contacts</h3>
+				<ul>
+					<li>Telephone: +375 (29) 123-45-67</li>
+					<li>Email: info@motosite.by</li>
+					<li>Address: Minsk, Mototsikletnaya st., 1</li>
+				</ul>
+
+				<div class="footer-social">
+					<a href="#"><i class="fab fa-telegram"></i></a>
+					<a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>&copy; 2025 Мотосайт. Все права защищены.</p>
+		</div>
+	</footer>
+</body>
+</html>

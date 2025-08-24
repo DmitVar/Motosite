@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+	{% for motorcycle in motorcycles %}
+		<div class="card">
+			<div class="image-box">
+				<img src="{{ motorcycle.src }}" alt="{{ motorcycle.name }}" srcset="" />
+			</div>
+			<h3>{{motorcycle.name}}</h3>
+			<p class="description">
+				{{motorcycle.description}}
+			</p>
+			<a href="/motorcycles/remove?id=@bike.Id">
+                <button>DELETE</button>
+			</a>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}

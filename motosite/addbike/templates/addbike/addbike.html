@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="form-container">
+    <h1>Add Bike</h1>
+    <form action="/motorcycles/addbike" method="post">
+        <div class="form-group">
+            <label for="src">URL image bike</label>
+            <input name="src" placeholder="URL image bike"/>
+        </div>
+        <div class="form-group">
+            <label for="name">Brand</label>
+            <input name="name" placeholder="Brand">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description"></textarea>
+        </div>
+        <button>Add Bike</button>
+    </form>
+  </div>
+{% endblock %}
