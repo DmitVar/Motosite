@@ -4,9 +4,9 @@
 	{% for motorcycle in motorcycles %}
 		<div class="card">
 			<div class="image-box">
-				<img src="{{ motorcycle.src }}" alt="{{ motorcycle.name }}" srcset="" />
+				<img src="{{ motorcycle.image_link }}" alt="{{ motorcycle.name }}" srcset="" />
 			</div>
-			<h3>{{motorcycle.name}}</h3>
+			<h3>{{motorcycle.brand}} {{motorcycle.model}}</h3>
 			<p class="description">
 				{{motorcycle.description}}
 			</p>

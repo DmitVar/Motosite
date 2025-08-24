@@ -2,14 +2,17 @@ from django.db import models
 
 # Create your models here.
 class Motorcycle(models.Model):
-    brand = models.CharField(max_length=100)
+    brand = models.ForeignKey('MotorcycleBrand', on_delete=models.PROTECT, null=True)
     model = models.CharField(max_length=100)
-    type = models.CharField(max_length=100)
+    type = models.ForeignKey('MotorcycleType', on_delete=models.PROTECT, null=True)
+    engine = models.ForeignKey('EngineType', on_delete=models.PROTECT, null=True)
     engine_displacement = models.IntegerField()
     power = models.IntegerField()
+    transmission = models.ForeignKey('TransmissionType', on_delete=models.PROTECT, null=True)
     number_of_gears = models.IntegerField(blank=True, null=True)
+    drive_system = models.ForeignKey('DriveSystem', on_delete=models.PROTECT, null=True)
     brakes = models.CharField(max_length=100)
-    suspension = models.IntegerField(max_length=100)
+    suspension = models.CharField(max_length=100)
     weight = models.IntegerField()
     length = models.FloatField()
     seat_height = models.IntegerField()
